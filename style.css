@@ -1,0 +1,347 @@
+:root {
+  --color-primary: #0c1f38;
+  --color-secondary: #0b3062;
+  --color-tertiary: #011631;
+  --color-primary-hover: #19457f;
+  --color-primary-active: #0f5dc3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  color: white;
+  height: 69px;
+  width: 100%;
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(159, 150, 150);
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  flex-wrap: wrap;
+}
+
+nav section[voci] {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+nav section[voci] a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+nav .icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+nav .divider {
+  width: 1px;
+  height: 69px;
+  background-color: rgb(159, 150, 150);
+  margin: 0 15px;
+}
+
+nav.scrolled {
+  background-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  nav {
+      position: fixed;
+      padding: 20px;
+  }
+
+  section[voci] a[href="#homepage"]{
+    display: none;
+  }
+}
+
+/* ========== MAIN ========== */
+main {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 69px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  background-image: url(./asset/img/gary-lopater-dOOGrK3zcUc-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 0 80px;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  max-width: 600px;
+}
+
+main p {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+main button {
+  background-color: var(--color-primary);
+  color: #eee;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* ========== SECTION[APPROACH] ========== */
+section[approach] {
+  margin-top: 2rem;
+  display: flex;
+  background-color: white;
+  height: 400px;
+}
+
+section[approach] > div {
+  padding: 1rem 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+section[approach] > div:nth-of-type(1) {
+  background-image: url(./asset/img/nasa-Q1p7bh3SHj8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section[approach] > div:nth-of-type(2) {
+  background-image: url(./asset/img/unseen-studio-s9CC2SKySJM-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section[approach] > div:nth-of-type(2) h4 {
+  color: var(--color-primary);
+}
+
+section[approach] > div:nth-of-type(3) {
+  background-image: url(./asset/img/ivo-lukacovic-n-832jx3Qa8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section[approach] h4 {
+  padding: 1rem 0;
+  width: 90%;
+  font-size: 3rem;
+  color: white;
+  transition: font-size 0.4s ease;
+}
+
+section[approach] p {
+  display: none;
+  width: 90%;
+  z-index: 2;
+  position: relative;
+  color: white;
+}
+
+section[approach] > div:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none;
+  background-color: var(--color-tertiary);
+}
+
+section[approach] > div:hover h4 {
+  display: none;
+}
+
+section[approach] > div:hover p {
+  display: block;
+  font-size: 18px;
+}
+
+@media (max-width: 991px) {
+  section[approach] {
+    flex-direction: column;
+    height: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+section[approach] h4{
+  font-size: 2rem;
+}
+}
+
+
+/* ========== SECTION[REPORT] ========== */
+section[report] {
+  display: flex;
+  background-color: white;
+  padding: 2rem;
+}
+
+section[report] img {
+  width: 50%;
+  height: 70vh;
+  object-fit: cover;
+}
+section[report] h2,
+section[report] h3,
+section[report] p,
+section[report] li{
+  color: var(--color-primary);
+}
+
+section[report] > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  text-align: left;
+}
+
+section[report] h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+section[report] h3{
+   font-size: 1.5rem;
+   margin-bottom: 0.5rem;
+}
+
+section[report] ul{
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+section[report] p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.key-results{
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.key-results h4{
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.key-results ul li {
+  margin-bottom: 0.5rem;
+}
+
+section[report] button {
+  background-color: var(--color-primary);
+  color: #eee;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+main button:hover,
+section[report] button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+main button:active,
+section[report] button:active {
+  background-color: var(--color-primary-active);
+}
+
+@media (max-width: 991px) {
+  section[report] {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section[report] img {
+    width: 80%;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  section[report] div {
+    align-items: center;
+  }
+
+  section[report] h2,
+  section[report] p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  h2,
+  h3,
+  p,
+  li{
+    text-align: center;
+  }
+}
+
+/* ========== FOOTER ========== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  width: 100vw;
+  height: 100px;
+}
+
+footer p {
+  color: white;
+  font-size: 14px;
+}
